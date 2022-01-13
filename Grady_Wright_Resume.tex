@@ -1,0 +1,139 @@
+\documentclass[11pt, letterpaper]{article}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{enumitem}
+% \usepackage{showframe}
+\usepackage{titlesec}
+\usepackage{fontawesome}
+\usepackage{calc}
+\usepackage[none]{hyphenat}
+\pagenumbering{gobble}
+\geometry{left=1.2cm,right=1.2cm,top=1.5cm,bottom=1.25cm}
+\titlespacing*{\section}{0pt}{*2}{*1}
+\titleformat{\section}    
+       {\normalfont\fontsize{17}{19}\bfseries}{\thesection}{1em}{}
+\titlespacing*{\subsection}{0pt}{*2}{0pt}
+\titleformat{\subsection}    
+       {\normalfont\fontfamily{phv}\fontsize{12}{17}\bfseries}{\thesubsection}{1em}{}
+\newenvironment{desItemize}
+{ \begin{itemize}[leftmargin=*, topsep=1pt]
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+    \small     }
+{ \end{itemize}                  } 
+
+\newcommand{\columnRule}{
+    \noindent\hspace{-0.5\columnsep}\rule{\columnwidth + \columnsep/2}{1pt}\noindent
+}
+
+\newenvironment{leftSection}[1]
+{\section*{#1}}
+{\rule{\columnwidth + \columnsep/2}{1pt}}
+
+\newenvironment{rightSection}[1]
+{\section*{#1}}
+{\columnRule}
+
+\setlength{\columnsep}{1cm}
+
+\begin{document}
+{\noindent\hspace{-1mm}\Huge\textbf{Grady Wright}\par}
+{\vspace{2mm}\noindent\Large\textbf{Computer Engineer}\par}
+{\vspace{2mm}\noindent\small\faEnvelope\ gowright98@gmail.com\hfill \faExternalLinkSquare\ www.grady-wright.com\hfill \faLinkedin\ linkedin.com/in/grady-wright\hfill \faGithub\ github.com/littleg13}
+\normalsize\vspace{3mm}
+\begin{multicols*}{2}[]
+    \raggedcolumns
+\begin{leftSection}{Education}
+    \subsection*{University of Kansas}
+    Bachelor of Science\hfill\faCalendar\ May 2020\\
+    Major: Computer Engineering \hfill GPA: 3.95
+\end{leftSection}
+\begin{leftSection}{Experience}
+    \subsection*{Software Engineer}
+    \textbf{SpaceX}\hfill
+    \faCalendar\ 1/2021 - current
+    \begin{desItemize}
+        \item	Create large scale automated UI testing framework
+        \item	Write Python to implement automated writing and executing of UI tests
+        \item	Implement features and fix bugs for Garmin chart plotters using C
+        \item	Work with image comparison algorithms to implement UI test validation
+    \end{desItemize}
+    \subsection*{Software Engineering Intern}
+    \textbf{Garmin Ltd}\hfill
+    \faCalendar\ 5/2019 - 8/2019
+    \begin{desItemize}
+        \item	Create large scale automated UI testing framework
+        \item	Write Python to implement automated writing and executing of UI tests
+        \item	Implement features and fix bugs for Garmin chart plotters using C
+        \item	Work with image comparison algorithms to implement UI test validation
+    \end{desItemize}
+    \subsection*{Undergraduate Research Assistant}
+    \textbf{The University of Kansas}\hfill
+    \faCalendar\ 1/2019 - 6/2019
+    \begin{desItemize}
+        \item	Assist in development of real-time raytracing simulation of communication networks
+        \item	Develop CUDA C++ for simulation of raytracing
+        \item	Write C++ for visualization of simulation using OpenGL
+    \end{desItemize}
+\end{leftSection}
+\begin{leftSection}{Involvement}
+    \subsection*{Tau Beta Pi}
+    \textbf{Engineering Honor Society}
+    \begin{desItemize}
+    \item Active member through volunteering, tutoring, and test preparation
+    \end{desItemize}
+
+    \subsection*{Eta Kappa Nu}
+    \textbf{IEEE Honor Society}
+    \begin{desItemize}
+    \item Active member through volunteering and coursework assistance
+    \end{desItemize}
+\end{leftSection}
+\columnbreak
+\begin{rightSection}{Skills}
+    \begin{desItemize}
+    \item	Proficient with Python, C++, C\#, C, HTML/CSS/JS, MATLAB
+    \item	Proficient using OpenGL and CUDA
+    \item	Experience with ray-marching and signed distance fields
+    \item	Extensive experience with automated UI and regression testing
+    \item	3D modeling experience using AutoDesk Maya 2018, Blender, AutoDesk Inventor 2018
+    \end{desItemize}
+\end{rightSection}
+\begin{rightSection}{Honors and Awards}
+    \subsection*{First Place HackKU 2020}
+    \textbf{The University of Kansas}
+    \begin{desItemize}
+    \item 1st place in the FinTech track of KU’s annual hackathon for development of peer-to-peer money transfer system
+    \end{desItemize}
+    \subsection*{Undergraduate Achievement Award}
+    \textbf{Eta Kappa Nu}
+    \begin{desItemize}
+    \item Awarded to top students in EECS 221 Electromagnetics
+    \end{desItemize}
+\end{rightSection}
+\begin{rightSection}{Projects}
+    \subsection*{Twitch Overlay}
+    \textbf{Computer Graphics}
+    \begin{desItemize}
+    \item OpenGL rendered mesh particle system that updates with information gathered from the Twitch API
+    \item Communicates with Twitch API using HTTP/Websocket protocols written with Winsock 
+    \item Supports separate build for ray-marched SDFs allowing for soft-shadows and reflections
+    \end{desItemize}
+    \subsection*{Fluid Simulation}
+    \textbf{Computer Graphics}
+    \begin{desItemize}
+    \item SPH fluid simulation built entirely in OpenGL
+    \item Utilizes OpenGL compute shaders to apply particle physics and update render position
+    \item Optimization is done using spatial hashing on particle positions
+    \end{desItemize}
+    \subsection*{Mooxter}
+    \textbf{HackKU 2020}
+    \begin{desItemize}
+    \item Peer-to-peer payment transfer system to utilizing everyday applications, such as Discord, Slack, Twitter
+    \item Allows for XRP to be sent utilizing the Xpring API
+    \item Utilizes Kubernetes to easily add interfaces and scale
+    \end{desItemize}
+\end{rightSection}
+\end{multicols*}
+\end{document}
